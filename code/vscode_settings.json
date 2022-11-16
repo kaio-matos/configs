@@ -1,0 +1,99 @@
+{
+	"workbench.iconTheme": "material-icon-theme",
+	"editor.fontLigatures": true,
+	"liveServer.settings.CustomBrowser": "chrome",
+	"terminal.integrated.windowsEnableConpty": false,
+	"liveServer.settings.port": 3000,
+	"liveServer.settings.host": "192.168.15.8",
+	"[javascript]": {
+		"editor.defaultFormatter": "vscode.typescript-language-features"
+	},
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnSave": true
+	},
+	"[c]": {
+		"editor.formatOnSave": false,
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnSave": true
+	},
+	"editor.formatOnSave": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	},
+	"[python]": {
+		"editor.defaultFormatter": "ms-python.python"
+	},
+	"[dart]": {
+		"editor.formatOnSave": true,
+		"editor.formatOnType": true,
+		"editor.rulers": [
+			80
+		],
+		"editor.selectionHighlight": false,
+		"editor.suggest.snippetsPreventQuickSuggestions": false,
+		"editor.suggestSelection": "first",
+		"editor.tabCompletion": "onlySnippets",
+		"editor.wordBasedSuggestions": false
+	},
+	"eslint.validate": [
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact"
+	],
+	"prettier.tabWidth": 4,
+	"terminal.integrated.defaultProfile.windows": "Git Bash",
+	"editor.fontSize": 15,
+	"editor.fontFamily": "Jetbrains Mono Regular",
+	"editor.guides.bracketPairs": true,
+	"editor.bracketPairColorization.enabled": true,
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"[markdown]": {
+		"editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+	},
+	"terminal.integrated.profiles.windows": {
+		"PowerShell": {
+			"source": "PowerShell",
+			"icon": "terminal-powershell"
+		},
+		"Command Prompt": {
+			"path": [
+				"${env:windir}\\Sysnative\\cmd.exe",
+				"${env:windir}\\System32\\cmd.exe"
+			],
+			"args": [],
+			"icon": "terminal-cmd"
+		},
+		"Git Bash": {
+			"source": "Git Bash"
+		},
+		"Ubuntu-20.04 (WSL)": {
+			"path": "C:\\WINDOWS\\System32\\wsl.exe",
+			"args": [
+				"-d",
+				"Ubuntu-20.04"
+			]
+		}
+	},
+	"tabnine.experimentalAutoImports": true,
+	"svelte.enable-ts-plugin": true,
+	"php.suggest.basic": false,
+	"php.validate.enable": false,
+	"emmet.excludeLanguages": [
+		"markdown",
+		"php"
+	],
+	"42header.email": "kmatos-s@student.42sp.org.br",
+	"42header.username": "kmatos-s",
+	"workbench.colorTheme": "One Dark Pro",
+	"window.zoomLevel": 1
+}

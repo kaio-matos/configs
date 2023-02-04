@@ -90,7 +90,13 @@
     // --------------------------------------------------------------------------------------------------
     "workbench.colorTheme": "Red One Dark Pro | Mirage",
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorCustomizations": {},
+    "workbench.colorCustomizations": {
+        "sideBar.foreground": "#999999",
+        // "list.errorForeground": "#ff0000",
+        // "list.warningForeground": "#ff0",
+        "gitDecoration.modifiedResourceForeground": "#bf9600",
+        "gitDecoration.untrackedResourceForeground": "#abfa90"
+    },
     "editor.tokenColorCustomizations": {
         "functions": {
             "fontStyle": "italic bold"

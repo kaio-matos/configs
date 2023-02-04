@@ -72,7 +72,7 @@
     "editor.insertSpaces": false,
     "editor.renderWhitespace": "all",
     "editor.fontSize": 15,
-    "editor.fontFamily": "'Firacode', 'Jetbrains Mono Regular', 'Droid Sans Mono', 'monospace', monospace",
+    "editor.fontFamily": "Jetbrains Mono, Firacode, Droid Sans Mono, monospace",
     "editor.guides.bracketPairs": true,
     "editor.bracketPairColorization.enabled": true,
     "editor.formatOnSave": true,
@@ -88,7 +88,7 @@
     // --------------------------------------------------------------------------------------------------
     // CUSTOMIZATION
     // --------------------------------------------------------------------------------------------------
-    "workbench.colorTheme": "Red One Dark Pro | Dark",
+    "workbench.colorTheme": "Red One Dark Pro | Mirage",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.colorCustomizations": {},
     "editor.tokenColorCustomizations": {
@@ -111,6 +111,6 @@
     "theme-by-language.themes": {
         "*": "Red One Dark Pro | Mirage",
         "c": "Red One Dark Pro | Dark",
-        "Makefile": "Red One Dark Pro | Dark"
+        "makefile": "Red One Dark Pro | Dark"
     }
 }

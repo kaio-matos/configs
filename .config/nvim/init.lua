@@ -609,6 +609,8 @@ require('lazy').setup({
         'prettier',
         'prettierd',
         'dockerls',
+        'cssls',
+        'html',
         'docker_compose_language_service',
         'tailwindcss',
         'stylua', -- Used to format lua code
@@ -777,7 +779,7 @@ require('lazy').setup({
       --
       -- Examples:
       --  - va)  - [V]isually select [A]round [)]paren
-      --  - yinq - [Y]ank [I]nside [N]ext [']quote
+      --  - yinq - [Y]ank [I]nside [N]ext ['quote
       --  - ci'  - [C]hange [I]nside [']quote
       require('mini.ai').setup { n_lines = 500 }
 

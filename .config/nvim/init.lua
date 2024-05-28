@@ -91,7 +91,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
@@ -130,7 +130,7 @@ vim.opt.signcolumn = 'yes'
 
 -- Decrease update time
 vim.opt.updatetime = 250
--- vim.opt.timeoutlen = 300
+vim.opt.timeoutlen = 300
 
 -- Configure how new splits should be opened
 vim.opt.splitright = true
@@ -532,7 +532,7 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        clangd = {},
+        -- clangd = {},
         -- gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
@@ -542,8 +542,29 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        tsserver = {},
-        --
+        tsserver = {
+          init_options = {
+            plugins = {
+              {
+                name = '@vue/typescript-plugin',
+                -- If .vue file cannot be recognized in either js or ts file try to add `typescript` and `javascript` in languages table.
+                languages = { 'vue', 'typescript', 'javascript' },
+              },
+            },
+          },
+          filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+        },
+        -- https://github.com/vuejs/language-tools/issues/3925
+        -- vue-language-server@1.8.27
+        -- ['volar@1.8.27'] = {}, -- for some reason its not working properly this way so use MasonInstall vue-languange-server@1.8.27
+        volar = {
+          filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+          init_options = {
+            vue = {
+              hybridMode = false,
+            },
+          },
+        },
 
         lua_ls = {
           -- cmd = {...},
@@ -585,6 +606,11 @@ require('lazy').setup({
       -- for you, so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
+        'prettier',
+        'prettierd',
+        'dockerls',
+        'docker_compose_language_service',
+        'tailwindcss',
         'stylua', -- Used to format lua code
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
@@ -622,7 +648,9 @@ require('lazy').setup({
         --
         -- You can use a sub-list to tell conform to run *until* a formatter
         -- is found.
-        -- javascript = { { "prettierd", "prettier" } },
+        javascript = { { 'prettierd', 'prettier' } },
+        typescript = { { 'prettierd', 'prettier' } },
+        vue = { { 'prettierd', 'prettier' } },
       },
     },
   },
@@ -814,14 +842,14 @@ require('lazy').setup({
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
   -- require 'kickstart.plugins.debug',
-  -- require 'kickstart.plugins.indent_line',
+  require 'kickstart.plugins.indent_line',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
 }, {
   ui = {
     -- If you have a Nerd Font, set icons to an empty table which will use the

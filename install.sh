@@ -12,3 +12,10 @@ ln -sf $SCRIPT_DIR/shell/.tmux.conf ~/.tmux.conf
 ln -sf $SCRIPT_DIR/shell/.bashrc ~/.bashrc
 ln -sf $SCRIPT_DIR/shell/.zshrc ~/.zshrc
 
+# Install nerd font
+mkdir -p ~/.fonts
+curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz
+tar -xvf JetBrainsMono.tar.xz -C ~/.fonts
+rm JetBrainsMono.tar.xz
+
+fc-cache -f -v

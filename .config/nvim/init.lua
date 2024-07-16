@@ -104,6 +104,8 @@ vim.opt.number = true
 --  Experiment for yourself to see if you like it!
 vim.opt.relativenumber = true
 
+vim.api.nvim_set_keymap('t', '<ESC>', '<C-\\><C-n>', { noremap = true })
+
 -- Allow creating a file in the current directory with :e filename
 vim.opt.autochdir = true
 

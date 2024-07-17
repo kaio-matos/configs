@@ -370,9 +370,7 @@ require('lazy').setup({
       local builtin = require 'telescope.builtin'
       vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
       vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
-      vim.keymap.set('n', '<leader>sf', function()
-        builtin.find_files { hidden = true, no_ignore = true }
-      end, { desc = '[S]earch [F]iles' })
+      vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
       vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
       vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
       vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
@@ -553,13 +551,13 @@ require('lazy').setup({
         -- But for many setups, the LSP (`tsserver`) will work just fine
         tsserver = {
           init_options = {
-            plugins = {
-              {
-                name = '@vue/typescript-plugin',
-                -- If .vue file cannot be recognized in either js or ts file try to add `typescript` and `javascript` in languages table.
-                languages = { 'vue', 'typescript', 'javascript' },
-              },
-            },
+            -- plugins = {
+            --   {
+            --     name = '@vue/typescript-plugin',
+            --     -- If .vue file cannot be recognized in either js or ts file try to add `typescript` and `javascript` in languages table.
+            --     languages = { 'vue', 'typescript', 'javascript' },
+            --   },
+            -- },
           },
           filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
         },
@@ -567,12 +565,12 @@ require('lazy').setup({
         -- vue-language-server@1.8.27
         -- ['volar@1.8.27'] = {}, -- for some reason its not working properly this way so use MasonInstall vue-languange-server@1.8.27
         volar = {
-          filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
-          init_options = {
-            vue = {
-              hybridMode = false,
-            },
-          },
+          -- filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+          -- init_options = {
+          --   vue = {
+          --     hybridMode = false,
+          --   },
+          -- },
         },
 
         lua_ls = {

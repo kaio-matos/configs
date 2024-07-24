@@ -52,8 +52,13 @@ installing "Oh My Zsh Plugins"
 ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
 rm -rf $ZSH_CUSTOM/plugins/
 mkdir -p $ZSH_CUSTOM/plugins/
+mkdir -p $HOME/.zsh
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+git clone https://github.com/catppuccin/zsh-syntax-highlighting.git 
+
+cp -v zsh-syntax-highlighting/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh $HOME/.zsh/
+rm -rf zsh-syntax-highlighting
 finished "Oh My Zsh Plugins"
 
 

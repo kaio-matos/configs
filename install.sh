@@ -24,6 +24,9 @@ ln -sf $SCRIPT_DIR/.config/nvim ~/.config/nvim
 # Install tmux config
 ln -sf $SCRIPT_DIR/shell/.tmux.conf ~/.tmux.conf
 
+# Install alacritty terminal config
+ln -sf $SCRIPT_DIR/shell/.alacritty.toml ~/.alacritty.toml
+
 installing "NerdFonts"
 mkdir -p ~/.fonts
 curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz

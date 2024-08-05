@@ -559,26 +559,23 @@ require('lazy').setup({
         -- But for many setups, the LSP (`tsserver`) will work just fine
         tsserver = {
           init_options = {
-            -- plugins = {
-            --   {
-            --     name = '@vue/typescript-plugin',
-            --     -- If .vue file cannot be recognized in either js or ts file try to add `typescript` and `javascript` in languages table.
-            --     languages = { 'vue', 'typescript', 'javascript' },
-            --   },
-            -- },
+            plugins = {
+              {
+                name = '@vue/typescript-plugin',
+                -- If .vue file cannot be recognized in either js or ts file try to add `typescript` and `javascript` in languages table.
+                languages = { 'vue', 'typescript', 'javascript' },
+              },
+            },
           },
           filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
         },
-        -- https://github.com/vuejs/language-tools/issues/3925
-        -- vue-language-server@1.8.27
-        -- ['volar@1.8.27'] = {}, -- for some reason its not working properly this way so use MasonInstall vue-languange-server@1.8.27
         volar = {
-          -- filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
-          -- init_options = {
-          --   vue = {
-          --     hybridMode = false,
-          --   },
-          -- },
+          filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+          init_options = {
+            vue = {
+              hybridMode = false,
+            },
+          },
         },
 
         lua_ls = {

@@ -103,4 +103,8 @@ return {
       }
     end,
   },
+  {
+    'sindrets/diffview.nvim',
+    config = function() end,
+  },
 }

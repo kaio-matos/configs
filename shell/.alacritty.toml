@@ -16,3 +16,8 @@ style = "Italic"
 [font.normal]
 family = "JetbrainsMono Nerd Font"
 style = "Regular"
+
+[keyboard]
+bindings = [
+  { key = "N", mods = "Control|Shift", action = "CreateNewWindow" }
+]

@@ -37,6 +37,9 @@ return {
           enable = true,
           -- update_cwd = true,
         },
+        view = {
+          adaptive_size = true,
+        },
         git = {
           enable = true,
           ignore = false,

@@ -24,8 +24,11 @@ ln -sf $SCRIPT_DIR/.config/nvim ~/.config/nvim
 # Install tmux config
 ln -sf $SCRIPT_DIR/shell/.tmux.conf ~/.tmux.conf
 
-# Install alacritty terminal config
-ln -sf $SCRIPT_DIR/shell/.alacritty.toml ~/.alacritty.toml
+# # Install alacritty terminal config
+# ln -sf $SCRIPT_DIR/shell/.alacritty.toml ~/.alacritty.toml
+
+# Install kitty terminal config
+ln -sf $SCRIPT_DIR/.config/kitty ~/.config/kitty
 
 installing "NerdFonts"
 mkdir -p ~/.fonts

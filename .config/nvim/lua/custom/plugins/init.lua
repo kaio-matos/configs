@@ -112,7 +112,15 @@ return {
   },
   {
     'sindrets/diffview.nvim',
-    config = function() end,
+    config = function()
+      vim.keymap.set('n', '<leader><leader>v', function()
+        if next(require('diffview.lib').views) == nil then
+          vim.cmd 'DiffviewOpen'
+        else
+          vim.cmd 'DiffviewClose'
+        end
+      end, { desc = 'diffview: View Git Diff' })
+    end,
   },
   {
     'kevinhwang91/nvim-ufo',

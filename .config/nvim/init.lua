@@ -106,9 +106,6 @@ vim.opt.relativenumber = false
 
 vim.opt.tabstop = 4
 
--- Remap to ESC to get out of terminal mode
-vim.api.nvim_set_keymap('t', '<ESC>', '<C-\\><C-n>', { noremap = true })
-
 -- Allow creating a file in the current directory with :e filename
 -- vim.opt.autochdir = true
 
@@ -187,7 +184,7 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 --
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
-vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+-- vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- TIP: Disable arrow keys in normal mode
 -- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
@@ -765,16 +762,16 @@ require('lazy').setup({
           --
           -- <c-l> will move you to the right of each of the expansion locations.
           -- <c-h> is similar, except moving you backwards.
-          ['<C-l>'] = cmp.mapping(function()
-            if luasnip.expand_or_locally_jumpable() then
-              luasnip.expand_or_jump()
-            end
-          end, { 'i', 's' }),
-          ['<C-h>'] = cmp.mapping(function()
-            if luasnip.locally_jumpable(-1) then
-              luasnip.jump(-1)
-            end
-          end, { 'i', 's' }),
+          -- ['<C-l>'] = cmp.mapping(function()
+          --   if luasnip.expand_or_locally_jumpable() then
+          --     luasnip.expand_or_jump()
+          --   end
+          -- end, { 'i', 's' }),
+          -- ['<C-h>'] = cmp.mapping(function()
+          --   if luasnip.locally_jumpable(-1) then
+          --     luasnip.jump(-1)
+          --   end
+          -- end, { 'i', 's' }),
         },
         sources = {
           { name = 'nvim_lsp' },

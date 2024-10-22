@@ -1,3 +1,26 @@
+-- You can add your own plugins here or in other files in this directory!
+--  I promise not to create any merge conflicts in this directory :)
+--
+-- See the kickstart.nvim README for more information
+
+vim.keymap.set('i', '<C-b>', '<ESC>^i', { desc = 'move beginning of line' })
+vim.keymap.set('i', '<C-e>', '<End>', { desc = 'move end of line' })
+vim.keymap.set('i', '<C-h>', '<Left>', { desc = 'move left' }) -- conflicts with some keybindings from nvim-cmp (but i prefer this so its commented)
+vim.keymap.set('i', '<C-l>', '<Right>', { desc = 'move right' }) -- conflicts with some keybindings from nvim-cmp (but i prefer this so its commented)
+vim.keymap.set('i', '<C-j>', '<Down>', { desc = 'move down' })
+vim.keymap.set('i', '<C-k>', '<Up>', { desc = 'move up' })
+
+vim.keymap.set('n', '<leader>b', '<cmd>enew<CR>', { desc = 'buffer new' })
+
+vim.keymap.set('n', '<leader>x', '<cmd>:enew<bar>bd#<CR>', { desc = 'Buffer Close' })
+
+vim.keymap.set('t', '<C-x>', '<C-\\><C-N>', { desc = 'Terminal escape terminal mode', noremap = true })
+-------------------------
+
+vim.keymap.set('n', '<leader>fm', function()
+  require('conform').format { lsp_fallback = true }
+end, { desc = 'general format file' })
+
 local function nvim_tree_on_attach(bufnr)
   local api = require 'nvim-tree.api'
 
@@ -19,10 +42,6 @@ local function nvim_tree_on_attach(bufnr)
   vim.keymap.set('n', '<leader>t', '<cmd>NvimTreeToggle<cr>', opts_overwrite 'Toggle Explorer')
 end
 
--- You can add your own plugins here or in other files in this directory!
---  I promise not to create any merge conflicts in this directory :)
---
--- See the kickstart.nvim README for more information
 return {
   {
     'nvim-tree/nvim-tree.lua',

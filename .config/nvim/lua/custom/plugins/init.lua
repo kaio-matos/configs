@@ -54,10 +54,18 @@ return {
       require('nvim-tree').setup {
         update_focused_file = {
           enable = true,
+          exclude = function(buffer)
+            if string.find(buffer.file, 'node_modules') then
+              return true
+            end
+            return false
+          end,
           -- update_cwd = true,
         },
         view = {
-          adaptive_size = true,
+          width = {
+            max = 50,
+          },
         },
         git = {
           enable = true,

@@ -182,4 +182,8 @@ return {
       }
     end,
   },
+  {
+    'github/copilot.vim',
+    config = function() end,
+  },
 }

@@ -16,6 +16,18 @@ vim.keymap.set('n', '<leader>x', '<cmd>:enew<bar>bd#<CR>', { desc = 'Buffer Clos
 
 vim.keymap.set('t', '<C-x>', '<C-\\><C-N>', { desc = 'Terminal escape terminal mode', noremap = true })
 -------------------------
+---
+---
+---
+---
+
+--- Tab and Shift Tab
+local opts = { noremap = true, silent = true }
+vim.keymap.set('v', '<Tab>', '>gv', opts)
+vim.keymap.set('v', '<S-Tab>', '<gv', opts)
+vim.keymap.set('i', '<S-Tab>', 'C-d')
+
+-------------------------
 
 vim.keymap.set('n', '<leader>fm', function()
   require('conform').format { lsp_fallback = true }

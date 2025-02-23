@@ -103,13 +103,19 @@ return {
   {
     'mg979/vim-visual-multi',
   },
-  {
-    'windwp/nvim-autopairs',
-    event = 'InsertEnter',
-    config = true,
-    -- use opts = {} for passing setup options
-    -- this is equalent to setup({}) function
-  },
+  -- {
+  --   'windwp/nvim-autopairs',
+  --   event = 'InsertEnter',
+  --   config = true,
+  --   -- use opts = {} for passing setup options
+  --   -- this is equalent to setup({}) function
+  -- },
+
+  -- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-pairs.md
+  { 'echasnovski/mini.pairs', version = '*', config = true },
+  -- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-bracketed.md
+  { 'echasnovski/mini.bracketed', version = '*', config = true },
+
   {
     'nvim-pack/nvim-spectre',
     config = function()

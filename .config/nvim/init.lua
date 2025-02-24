@@ -411,7 +411,7 @@ require('lazy').setup({
           -- mappings = {
           --   i = { ['<c-enter>'] = 'to_fuzzy_refine' },
           -- },
-          path_display = { 'smart' },
+          path_display = { 'truncate' },
         },
         -- pickers = {}
         extensions = {

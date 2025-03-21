@@ -111,8 +111,32 @@ return {
   --   -- this is equalent to setup({}) function
   -- },
 
-  -- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-pairs.md
-  { 'echasnovski/mini.pairs', version = '*', config = true },
+  -- -- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-ai.md
+  {
+    'echasnovski/mini.ai',
+    version = '*',
+    dependencies = {
+      {
+        'nvim-treesitter/nvim-treesitter-textobjects',
+        init = function()
+          -- no need to load the plugin, since we only need its queries
+          require('lazy.core.loader').disable_rtp_plugin 'nvim-treesitter-textobjects'
+        end,
+      },
+    },
+    config = function()
+      local gen_spec = require('mini.ai').gen_spec
+      require('mini.ai').setup {
+        custom_textobjects = {
+          -- Function definition (needs treesitter queries with these captures)
+          -- Allows d + i/a + f to delete inside or around a function
+          f = gen_spec.treesitter { a = '@function.outer', i = '@function.inner' },
+        },
+      }
+    end,
+  },
+  -- -- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-pairs.md
+  -- { 'echasnovski/mini.pairs', version = '*', config = true },
   -- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-bracketed.md
   { 'echasnovski/mini.bracketed', version = '*', config = true },
 

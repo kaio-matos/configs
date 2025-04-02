@@ -725,6 +725,13 @@ require('lazy').setup({
           lsp_fallback = true,
         }
       end,
+      formatters = {
+        dioxus_fmt = {
+          command = 'dx',
+          args = { 'fmt', '--file', '$FILENAME' },
+          stdin = false,
+        },
+      },
       formatters_by_ft = {
         lua = { 'stylua' },
         cpp = { 'clang-format' },
@@ -740,6 +747,7 @@ require('lazy').setup({
         javascriptreact = { { 'prettierd', 'prettier' } },
         typescriptreact = { { 'prettierd', 'prettier' } },
         vue = { { 'prettierd', 'prettier' } },
+        rust = { 'dioxus_fmt' },
       },
     },
   },

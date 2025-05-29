@@ -1,5 +1,4 @@
 return {
-
   {
     "mrcjkb/rustaceanvim",
     opts = {
@@ -9,7 +8,7 @@ return {
           ["rust-analyzer"] = {
             diagnostics = {
               enable = true,
-              disabled = { "unresolved-proc-macro" },
+              disabled = { "unresolved-proc-macro", "proc-macro-disabled" },
               enableExperimental = true,
             },
           },

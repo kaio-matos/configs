@@ -15,4 +15,4 @@ vim.keymap.set("t", "<C-x>", "<C-\\><C-N>", { desc = "Terminal escape terminal m
 local opts = { noremap = true, silent = true }
 vim.keymap.set("v", "<Tab>", ">gv", opts)
 vim.keymap.set("v", "<S-Tab>", "<gv", opts)
-vim.keymap.set("i", "<S-Tab>", "C-d")
+-- vim.keymap.set("i", "<S-Tab>", "<gv", opts)

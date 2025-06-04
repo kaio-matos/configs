@@ -16,3 +16,13 @@ local opts = { noremap = true, silent = true }
 vim.keymap.set("v", "<Tab>", ">gv", opts)
 vim.keymap.set("v", "<S-Tab>", "<gv", opts)
 -- vim.keymap.set("i", "<S-Tab>", "<gv", opts)
+
+-- Clear Terminal (along with history) with Ctrl+l
+local term_clear = function()
+  vim.fn.feedkeys("^L", "n")
+  local sb = vim.bo.scrollback
+  vim.bo.scrollback = 1
+  vim.bo.scrollback = sb
+end
+
+vim.keymap.set("t", "<C-l>", term_clear)

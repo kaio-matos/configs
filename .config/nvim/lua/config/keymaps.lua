@@ -7,7 +7,7 @@ vim.keymap.set("i", "<C-e>", "<End>", { desc = "move end of line" })
 vim.keymap.set("i", "<C-h>", "<Left>", { desc = "move left" }) -- conflicts with some keybindings from nvim-cmp (but i prefer this so its commented)
 vim.keymap.set("i", "<C-l>", "<Right>", { desc = "move right" }) -- conflicts with some keybindings from nvim-cmp (but i prefer this so its commented)
 vim.keymap.set("i", "<C-j>", "<Down>", { desc = "move down" })
-vim.keymap.set("i", "<C-k>", "<Up>", { desc = "move up" })
+vim.keymap.set("i", "<C-k>", "<Up>", { desc = "move up", remap = true, silent = true })
 
 vim.keymap.set("t", "<C-x>", "<C-\\><C-N>", { desc = "Terminal escape terminal mode", noremap = true })
 

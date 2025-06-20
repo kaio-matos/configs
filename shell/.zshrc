@@ -7,6 +7,9 @@ alias ae='./a.out && echo'
 alias wn='watch -n0 norminette -R CheckForbiddenSourceHeader'
 alias wt='watch -n0'
 
+if [ -f ~/.bash_aliases ]; then
+. ~/.bash_aliases
+fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -129,7 +132,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # pnpm
-export PNPM_HOME="$HOME/.local/share/pnpm"
+export PNPM_HOME="/home/kaiodacxi/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;

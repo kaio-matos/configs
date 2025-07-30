@@ -66,7 +66,10 @@ install zsh
 finished "Zsh"
 
 installing "Zsh"
-install brew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# sudo groupadd homebrew
+# sudo usermod -a -G -r homebrew $USER
+# sudo chgrp -R homebrew /home/homebrew
 finished "Zsh"
 
 timestamp "Setting zsh as default shell"

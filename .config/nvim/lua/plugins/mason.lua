@@ -19,7 +19,7 @@ return {
         "tailwindcss-language-server",
         "taplo",
         "vtsls",
-        "vue-language-server",
+        "vue-language-server", --- Make sure to run :MasonInstall vue-language-server@2.2.12, because of course the vue guys had to introduce another break change
         "wgsl-analyzer",
         "yaml-language-server",
       },

@@ -7,7 +7,7 @@ timestamp() {
 installing() {
     timestamp "Installing '$1'..."
 }
-install() {
+install1() {
     if [ $(command -v /usr/bin/apt) ]; then
         sudo apt install -y $1
     elif [ $(command -v /usr/bin/paru) ]; then
@@ -26,14 +26,14 @@ SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 installing "Configuration Files"
 
 installing "Neovim"
-install nvim
+install1 nvim
 # Install nvim config
 ln -sf $SCRIPT_DIR/.config/nvim ~/.config/nvim
 finished "Neovim"
 
 # Install tmux config
 installing "Tmux"
-install tmux
+install1 tmux
 ln -sf $SCRIPT_DIR/shell/.tmux.conf ~/.tmux.conf
 finished "Tmux"
 
@@ -48,7 +48,7 @@ finished "Nvm"
 
 # Install kitty terminal config
 installing "Kitty"
-install kitty
+install1 kitty
 rm -rf ~/.config/kitty
 ln -sf $SCRIPT_DIR/.config/kitty ~/.config/kitty
 finished "Kitty"
@@ -62,14 +62,14 @@ fc-cache -f -v
 finished "NerdFonts"
 
 installing "Zsh"
-install zsh
+install1 zsh
 finished "Zsh"
 
 installing "Zsh"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-# sudo groupadd homebrew
-# sudo usermod -a -G -r homebrew $USER
-# sudo chgrp -R homebrew /home/homebrew
+sudo groupadd homebrew
+sudo usermod -a -G -r homebrew $USER
+sudo chgrp -R homebrew /home/homebrew
 finished "Zsh"
 
 timestamp "Setting zsh as default shell"
@@ -103,7 +103,7 @@ else
     LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
     curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
     tar xf lazygit.tar.gz lazygit
-    install lazygit /usr/local/bin
+    sudo install lazygit /usr/local/bin
     rm lazygit.tar.gz
     rm lazygit
     finished "Lazygit"

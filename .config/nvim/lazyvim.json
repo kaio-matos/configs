@@ -1,6 +1,5 @@
 {
   "extras": [
-    "lazyvim.plugins.extras.ai.copilot-chat",
     "lazyvim.plugins.extras.coding.blink",
     "lazyvim.plugins.extras.coding.yanky",
     "lazyvim.plugins.extras.editor.harpoon2",
@@ -22,7 +21,7 @@
   ],
   "install_version": 8,
   "news": {
-    "NEWS.md": "10960"
+    "NEWS.md": "11866"
   },
   "version": 8
 }

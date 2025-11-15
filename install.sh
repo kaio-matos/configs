@@ -31,6 +31,12 @@ install1 nvim
 ln -sf $SCRIPT_DIR/.config/nvim ~/.config/nvim
 finished "Neovim"
 
+# installing "Zed"
+# install1 zed
+# # Install zed config
+# ln -sf $SCRIPT_DIR/.config/zed ~/.config/zed
+# finished "Zedd"
+
 # Install tmux config
 installing "Tmux"
 install1 tmux

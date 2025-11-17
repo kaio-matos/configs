@@ -7,6 +7,15 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+    "edit_predictions": {
+    "mode": "eager",
+    "copilot": {
+      "proxy": null,
+      "proxy_no_verify": null,
+      "enterprise_uri": null
+    },
+    "enabled_in_text_threads": false
+  },
     "agent": {
         "default_model": {
             "provider": "copilot_chat",
@@ -44,7 +53,7 @@
     "theme": {
         "mode": "dark",
         "light": "One Light",
-        "dark": "Catppuccin Mocha (Blur) [Light]"
+        "dark": "Catppuccin Mocha (Blur)"
     },
     "icon_theme": {
         "mode": "dark",

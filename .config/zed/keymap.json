@@ -19,9 +19,8 @@
         }
     },
     {
-        "context": "Editor && vim_mode == normal",
+        "context": "Editor && vim_mode == normal && !Terminal",
         "bindings": {
-            // "j k": "vim::NormalBefore"
             "space e": "workspace::ToggleLeftDock",
             "space b o": "workspace::CloseInactiveTabsAndPanes",
             "space f f": "file_finder::Toggle"
@@ -35,14 +34,18 @@
         }
     },
     {
-        "context": "Dock",
+        "context": "Dock && vim_mode == normal",
         "bindings": {
             "ctrl-w h": "workspace::ActivatePaneLeft",
             "ctrl-w l": "workspace::ActivatePaneRight",
             "ctrl-w k": "workspace::ActivatePaneUp",
-            "ctrl-w j": "workspace::ActivatePaneDown",
+            "ctrl-w j": "workspace::ActivatePaneDown"
+        }
+    },
+    {
+        "context": "Dock && !Terminal",
+        "bindings": {
             "space e": "workspace::ToggleLeftDock"
-            // ... or other keybindings
         }
     }
 ]

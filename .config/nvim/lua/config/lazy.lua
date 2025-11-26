@@ -51,3 +51,12 @@ require("lazy").setup({
     },
   },
 })
+
+-- Disabled dynamic package isolation in the filetree
+-- https://github.com/LazyVim/LazyVim/discussions/952#discussioncomment-13270853
+vim.api.nvim_create_autocmd("User", {
+  pattern = "VeryLazy",
+  callback = function()
+    require("lazyvim.util").root.get = vim.loop.cwd
+  end,
+})

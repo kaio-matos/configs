@@ -57,6 +57,19 @@ require("lazy").setup({
 vim.api.nvim_create_autocmd("User", {
   pattern = "VeryLazy",
   callback = function()
-    require("lazyvim.util").root.get = vim.loop.cwd
+    local root_dir = nvim_lsp.util.root_pattern(".git")
+
+    require("lazyvim.util").root.get = root_dir
+
+    -- make git dir the root dir, fixes go to references with monorepos
+    -- https://www.reddit.com/r/neovim/comments/1hg9d9c/comment/m2i8vtq/
+    local nvim_lsp = require("lspconfig")
+    local servers = { "vtsls" }
+    for _, lsp in pairs(servers) do
+      require("lspconfig")[lsp].setup({
+        on_attach = on_attach,
+        root_dir = root_dir,
+      })
+    end
   end,
 })

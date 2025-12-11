@@ -19,7 +19,7 @@
         }
     },
     {
-        "context": "Editor && vim_mode == normal && !Terminal",
+        "context": "Editor && vim_mode == normal && !Terminal && !MessagePanel",
         "bindings": {
             "space e": "workspace::ToggleLeftDock",
             "space b o": "workspace::CloseInactiveTabsAndPanes",
@@ -43,7 +43,7 @@
         }
     },
     {
-        "context": "Dock && !Terminal",
+        "context": "Dock && vim_mode == normal && !Terminal",
         "bindings": {
             "space e": "workspace::ToggleLeftDock"
         }

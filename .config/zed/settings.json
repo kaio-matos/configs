@@ -8,14 +8,14 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
     "edit_predictions": {
-    "mode": "eager",
-    "copilot": {
-      "proxy": null,
-      "proxy_no_verify": null,
-      "enterprise_uri": null
+        "mode": "eager",
+        "copilot": {
+            "proxy": null,
+            "proxy_no_verify": null,
+            "enterprise_uri": null
+        },
+        "enabled_in_text_threads": false
     },
-    "enabled_in_text_threads": false
-  },
     "agent": {
         "default_model": {
             "provider": "copilot_chat",
@@ -40,7 +40,7 @@
         }
     },
     "vim_mode": true,
-    "vertical_scroll_margin": 20,
+    // "vertical_scroll_margin": 20,
     "project_panel": {
         "indent_size": 16
     },
